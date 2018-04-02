@@ -1,5 +1,7 @@
 class Movie < ActiveRecord::Base
-  default_scope :order => 'title'
+  #default_scope :order => 'title'
+  
+  default_scope { order(created_at: :'title') }
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
   
@@ -19,11 +21,4 @@ class Movie < ActiveRecord::Base
   end
   
   
-  def poster
-    "http://ia.media-imdb.com/images/M/#{poster_url}"
-  end
-
-  def imdb
-    "http://www.imdb.com/title/#{imdb_id}/"
-  end
 end

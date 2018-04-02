@@ -1,4 +1,2 @@
-class LineItem < ActiveRecord::Base
-    belongs_to :movie
-    belongs_to :cart
+class LineItem < ApplicationRecord
 end
