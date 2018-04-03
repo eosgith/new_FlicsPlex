@@ -1,5 +1,6 @@
 class Movie < ActiveRecord::Base
-  default_scope {where(order: 'title') }
+  #default_scope {where(order: 'title') }
+  
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
   

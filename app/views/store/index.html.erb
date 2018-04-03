@@ -1,14 +1,20 @@
 <% if notice %>
-<p id="notice"><%= notice %></p>
+<aside id="notice"><%= notice %></aside>
 <% end %>
+
 <h1>FlicsPlex Movie Catalog</h1>
-<% @movies.each do |movies| %>
-<div class="entry">
-<%= image_tag(movies.image_url) %>
-<h3><%= movie.title %></h3>
-<%= sanitize(movies.description) %>
-<div class="price_line">
-<span class="price"><%= movies.price %></span>
-</div>
-</div>
-<% end %>
+
+<ul class="catalog">
+ 	  <% @movies.each do |movie| %>
+ 	    <li>
+ 	      <%= image_tag(movie.image_url) %>
+ 	      <h2><%= movie.title %></h2>
+ 	      <p>
+ 	        <%= sanitize(movie.description) %>
+	      </p>
+	      <div class="price">
+ 	        <%= movie.price %>
+ 	      </div>
+	    </li>
+ 	  <% end %>
+ 	</ul>

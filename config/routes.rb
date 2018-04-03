@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
  
-  get 'store/index'
+   root 'store#index', as: 'store'
 
   resources :movies
   resources :line_items
@@ -11,11 +11,7 @@ Rails.application.routes.draw do
   
   resources :movies, only: [:show, :index]
   
-   
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-   root 'store#index', as: 'store'
+ 
  
   end
- 
+  

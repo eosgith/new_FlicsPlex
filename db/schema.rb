@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401233916) do
+ActiveRecord::Schema.define(version: 20180403183613) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,12 +27,13 @@ ActiveRecord::Schema.define(version: 20180401233916) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "release_year"
-    t.float "price"
+    t.decimal "price", precision: 8, scale: 2
     t.text "description"
     t.string "imdb_id"
     t.string "poster_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
   end
 
   create_table "users", force: :cascade do |t|
