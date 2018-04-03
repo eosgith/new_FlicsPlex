@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html>
+<head>  
+<title>FlicsPlex</title>
+<%= csrf_meta_tags %>
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-  
-    
-    
-  </head>
+<%= stylesheet_link_tag 'application', media: 'all',                            
+                  'data-turbolinks-track': 'reload' %>  
+<%= javascript_include_tag 'application',                               
+                  'data-turbolinks-track': 'reload' %> 
+                  
+</head>
 
-<body>
 
-  <%= render "layouts/header" %>
+<body>   
+<header class="main">
+<%= image_tag 'logo.svg', alt: 'FlicsPlex Movie Catalog' %> 
 
-  <%= render "layouts/alerts" %>
+<h1><%= @page_title %></h1>
 
-  <div id="main-content" class="row full-min-height">
-    <%= yield %>
-  </div>
+</header>
 
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr> <p>© new_FlicsPlex 2018</p>
-    </div>
-  </footer>
+<section class="content">     
+<nav class="side_nav">        
+  <ul>          
+  	<li><a href="/">Home</a></li>         
+  	
+  	<li><a href="/questions">Questions</a></li>          
+  	<li><a href="/news">News</a></li>         
+  	<li><a href="/contact">Contact</a></li>        
+  </ul>     
+</nav>                       
 
-  
-
-</body>
+      <main class='<%= controller.controller_name %>'>        
+  <%= yield %>     
+  </main>    
+  </section>  
+  </body>
 </html>

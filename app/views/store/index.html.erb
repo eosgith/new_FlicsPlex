@@ -5,16 +5,20 @@
 <h1>FlicsPlex Movie Catalog</h1>
 
 <ul class="catalog">
- 	  <% @movies.each do |movie| %>
- 	    <li>
- 	      <%= image_tag(movie.image_url) %>
- 	      <h2><%= movie.title %></h2>
- 	      <p>
- 	        <%= sanitize(movie.description) %>
-	      </p>
-	      <div class="price">
- 	        <%= movie.price %>
- 	      </div>
-	    </li>
- 	  <% end %>
- 	</ul>
+  <% cache @movies do %>   
+    <% @movies.each  do |movie| % 
+    <% cache movie do %>     
+	 <li> 
+		<%=  image_tag(movie.image_url)  %>          
+		<h2> <%= movie.title %> </h2        
+		<p            
+		<%=  sanitize(movie.description) %>         
+		</p>          
+		<div class="price" >             
+	 	<%= number_to_currency(movie.price) %           
+		</div>       
+	 </li>
+	<% end %>   
+   <% end %>
+  <% end %>
+</ul>
