@@ -8,8 +8,7 @@
   <% cache @movies do %>   
     <% @movies.each  do |movie| % 
  
-    
-		<li>
+  		<li>
 				<%=  image_tag(movie.image_url)  %>          
 				<h2> <%= movie.title %> </h2        
 				<p            

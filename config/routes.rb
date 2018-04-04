@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   resources :movies, only: [:show, :index]
   
- 
+  root :to => 'site#index'
  
   end
   
