@@ -9,7 +9,7 @@
     <% @movies.each  do |movie| % 
  
     
-	 <li> 
+		<li>
 				<%=  image_tag(movie.image_url)  %>          
 				<h2> <%= movie.title %> </h2        
 				<p            
@@ -17,9 +17,9 @@
 				</p>          
 				<div class="price" >             
 		 		<%= number_to_currency(movie.price) %           
-		</div>     
-	</li>
+				</div>     
+		</li>
 		<% end %>	
-   <% end %>
+   	<% end %>
   <% end %>
 </ul>
