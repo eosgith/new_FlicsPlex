@@ -15,68 +15,91 @@
  
 
  */
-body {
-  margin: 0;
-  padding: 0;
+body, body > p, body > ol, body > ul, body > td { margin: 8px !important }
+
+#banner {
+  position: relative;
+  min-height: 40px;
+  background: #9c9;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
 }
-header.main {
-  text-align: center; // center on mobile
-  @media (min-width: 30em) {
-    text-align: left; // left align on desktop
-  }
-  background: #282;
-  margin: 0;
+
+#main {
+    padding: 1em;
+    background: white;
+    flex: 1;
+ 
+    margin: 0;
+    }
   h1 {
     display: none;
   }
-}
+ 
 .content {
   margin: 0;
   padding: 0;
 
   display: flex;
   display: -webkit-flex;
-  flex-direction: column; // mobile is horizontally laid out
+  flex-direction: column;  
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  }
+#columns {
+      background: #141;
+      display: flex;
+}
+    #main {
+        padding: 1em;
+        background: white;
+        flex: 1;
+          }
+@media all and (max-width: 800px) {
+  #columns {
+    flex-direction: column-reverse;
+  }
+}
 
-  @media (min-width: 30em) {
-    flex-direction: row;  // desktop is vertically laid out
-    -webkit-box-orient: horizontal;
+@media ll and (max-width: 500px) {
+  #banner {
+    height: 1em;
   }
 
-  nav {
+  #banner .title {
+    display: none;
+  }
+}
+
+nav {
     padding-bottom: 1em;
     background: #141;
-    text-align: center;  // mobile has centered nav
-    @media (min-width: 30em) {
-      text-align: left; // desktop nav is left-aligned
-      padding: 1em;     // and needs more padding
-    }
-    ul {
-      list-style: none;
-      margin: 0;
+    text-align: center;  
+    } 
+  ul {
       padding: 0;
-      @media (min-width: 30em) {
-        padding-right: 1em; // give desktop some extra space
       }
-      li {
-        margin: 0;
-        padding: 0.5em;
-        text-transform: uppercase;
-        letter-spacing: 0.354em;
-        a {
-          color: #bfb;
-          text-decoration: none;
-        }
+      
+  li {
+    list-style: none;
+    }
+    
+  a {
+     color: #bfb;
+      font-size: small;
+      }
+ 
+  
+ 
         a:hover {
           background: none;
           color: white;
         }
-      }
-    }
-  }
+ 
   main {
     padding: 0.5em;
   }
-}
+ 

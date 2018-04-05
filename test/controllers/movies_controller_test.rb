@@ -45,4 +45,20 @@ class MoviesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to movies_url
   end
+  
+   test "can't delete movie in cart" do
+    assert_difference('Movie.count', 0) do
+      delete product_url(movies(:two))
+    end
+ 
+    assert_redirected_to movies_url
+  end
+ 
+  test "should destroy movie" do
+    assert_difference('Movie.count', -1) do
+      delete product_url(@movie)
+    end
+ 
+    assert_redirected_to movies_url
+  end
 end
